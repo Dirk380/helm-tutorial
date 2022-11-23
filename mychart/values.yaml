@@ -1,0 +1,15 @@
+replicacount: 
+  backend: 1
+  frontend: 1
+
+images:
+  crmfrontend: dirk380/crmv:2
+  crmbackend: dirk380/crmsql
+
+deploymentnames:
+  frontend: crm-frontend
+  backend: crm-backend
+
+containernames:
+  frontend: frontend-container
+  backend: backend-container

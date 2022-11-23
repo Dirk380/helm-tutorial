@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: backend-deploy
+  name: {{ .Values.deploymentnames.backend }}
+spec:
+  replicas: {{ .Values.replicacount.backend}}
+  selector:
+    matchLabels:
+      app: backend-deploy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: backend-deploy
+    spec:
+      containers:
+      - image: {{ .Values.images.crmbackend }}
+        name: {{ .Values.containernames.backend}}
+        resources: {}
+status: {}
