@@ -5,7 +5,7 @@ metadata:
   labels:
     app: backend-deploy
     app.kubernetes.io/managed-by: Helm
-  name: svc-backend
+  name: {{ .Values.serviceName.backend }}
 spec:
   ports:
   - port: 3306

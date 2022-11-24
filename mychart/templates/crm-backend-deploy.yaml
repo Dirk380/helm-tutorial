@@ -4,9 +4,9 @@ metadata:
   creationTimestamp: null
   labels:
     app: backend-deploy
-  name: {{ .Values.deploymentnames.backend }}
+  name: {{ .Values.deploymentNames.backend }}
 spec:
-  replicas: {{ .Values.replicacount.backend}}
+  replicas: {{ .Values.replicaCount.backend}}
   selector:
     matchLabels:
       app: backend-deploy
@@ -19,6 +19,6 @@ spec:
     spec:
       containers:
       - image: {{ .Values.images.crmbackend }}
-        name: {{ .Values.containernames.backend}}
+        name: {{ .Values.containerNames.backend}}
         resources: {}
 status: {}

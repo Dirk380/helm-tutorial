@@ -1,15 +1,33 @@
-replicacount: 
+replicaCount: 
   backend: 1
   frontend: 1
+
 
 images:
   crmfrontend: dirk380/crmv:2
   crmbackend: dirk380/crmsql
 
-deploymentnames:
+ports:
+  nodePortCrmFront: 30001
+
+serviceName:
+  frontend: crm-frontend-svc
+  backend: crm-backend-svc
+
+deploymentNames:
   frontend: crm-frontend
   backend: crm-backend
 
-containernames:
+configNames:
+  secret: sec-map
+
+secretData:
+  DB_SERVER: Y3JtLWJhY2tlbmQtc3Zj
+  DB_USER: cm9vdA==
+  DB_PASSWORD: cm9vdA==
+  DB_NAME: d2ViZGFtbl9kZW1vcw==
+
+containerNames:
   frontend: frontend-container
   backend: backend-container
+

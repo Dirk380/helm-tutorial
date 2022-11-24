@@ -5,12 +5,13 @@ metadata:
   labels:
     app: frontend-deploy
     app.kubernetes.io/managed-by: Helm
-  name: svc-frontend
+  name: {{ .Values.serviceName.frontend}}
 spec:
   ports:
   - port: 80
     protocol: TCP
     targetPort: 80
+    nodePort: {{ .Values.ports.nodePortCrmFront}}
   selector:
     app: frontend-deploy
   type: NodePort
